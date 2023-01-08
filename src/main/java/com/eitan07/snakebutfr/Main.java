@@ -221,6 +221,8 @@ public class Main extends Application {
             } catch (NumberFormatException e) {
                 e.printStackTrace();
             }
+        } else {
+            TICK_LENGTH = 400;
         }
         launch();
 
