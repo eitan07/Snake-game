@@ -1,6 +1,7 @@
 package com.eitan07.snakebutfr;
 
 import javafx.application.Application;
+import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -33,8 +34,11 @@ public class Main extends Application {
     int appleX;
     int appleY;
     int score = 0;
+    boolean keyPressedDuringTick = false;
 
    // Dev options
+    boolean debugMode = true;
+
     boolean showDebugData = false;
     boolean showGrid = false;
     boolean showSnakePartNum = false;
@@ -46,6 +50,8 @@ public class Main extends Application {
         canvas = new Canvas(600, 600);
         mainScene = new Scene(root, 600, 600);
         stage.setScene(mainScene);
+        mainScene.setCursor(Cursor.NONE);
+        stage.setResizable(false);
         stage.show();
         root.getChildren().add(canvas);
         initGame();
@@ -73,6 +79,7 @@ public class Main extends Application {
                 } else {
                     GraphicsContext gc = canvas.getGraphicsContext2D();
                     gc.setFont(new Font("System Regular", 20));
+                    gc.setFill(Color.RED);
                     gc.fillText(String.format("Score: %d", score), 10, 25);
                 }
                 gameTicks++;
@@ -89,6 +96,7 @@ public class Main extends Application {
         moveSnake();
         checkBorderCollisions();
         drawSnake();
+        keyPressedDuringTick = false;
 
         if (x.get(0) == appleX & y.get(0) == appleY) {
             genAppleLoc();
@@ -99,22 +107,31 @@ public class Main extends Application {
 
     private void handleKeyboardEvents() {
         mainScene.setOnKeyPressed(event -> {
-            switch (event.getCode()) {
-                case UP -> {
-                    if (snakeDir != Direction.DOWN) snakeDir = Direction.UP;
+            if (!keyPressedDuringTick) {
+                switch (event.getCode()) {
+                    case UP -> {
+                        if (snakeDir != Direction.DOWN) snakeDir = Direction.UP;
+                    }
+                    case DOWN -> {
+                        if (snakeDir != Direction.UP) snakeDir = Direction.DOWN;
+                    }
+                    case LEFT -> {
+                        if (snakeDir != Direction.RIGHT) snakeDir = Direction.LEFT;
+                    }
+                    case RIGHT -> {
+                        if (snakeDir != Direction.LEFT) snakeDir = Direction.RIGHT;
+                    }
+                    case G -> showGrid =! showGrid;
+                    case N -> showSnakePartNum =! showSnakePartNum;
+                    case F3 -> showDebugData =! showDebugData;
+                    case SPACE -> {
+                        if (debugMode) {
+                            score++;
+                            addNewSnakePart();
+                        }
+                    }
                 }
-                case DOWN -> {
-                    if (snakeDir != Direction.UP) snakeDir = Direction.DOWN;
-                }
-                case LEFT -> {
-                    if (snakeDir != Direction.RIGHT) snakeDir = Direction.LEFT;
-                }
-                case RIGHT -> {
-                    if (snakeDir != Direction.LEFT) snakeDir = Direction.RIGHT;
-                }
-                case G -> showGrid =! showGrid;
-                case N -> showSnakePartNum =! showSnakePartNum;
-                case F3 -> showDebugData =! showDebugData;
+                keyPressedDuringTick = true;
             }
         });
     }
