@@ -3,15 +3,6 @@
     <output-path>$PROJECT_DIR$/out/artifacts/SnakeButFr_jar</output-path>
     <root id="archive" name="SnakeButFr.jar">
       <element id="module-output" name="SnakeButFr" />
-      <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/lib/javafx-swt.jar" />
-      <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/lib/javafx.base.jar" />
-      <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/lib/javafx.controls.jar" />
-      <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/lib/javafx.fxml.jar" />
-      <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/lib/javafx.graphics.jar" />
-      <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/lib/javafx.media.jar" />
-      <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/lib/javafx.properties" />
-      <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/lib/javafx.swing.jar" />
-      <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/lib/javafx.web.jar" />
       <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/bin/api-ms-win-core-console-l1-1-0.dll" />
       <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/bin/api-ms-win-core-console-l1-2-0.dll" />
       <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/bin/api-ms-win-core-datetime-l1-1-0.dll" />
@@ -69,7 +60,15 @@
       <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/bin/ucrtbase.dll" />
       <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/bin/vcruntime140.dll" />
       <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/bin/vcruntime140_1.dll" />
-      <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/src.zip" />
+      <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/lib/javafx-swt.jar" />
+      <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/lib/javafx.base.jar" />
+      <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/lib/javafx.controls.jar" />
+      <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/lib/javafx.fxml.jar" />
+      <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/lib/javafx.graphics.jar" />
+      <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/lib/javafx.media.jar" />
+      <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/lib/javafx.properties" />
+      <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/lib/javafx.swing.jar" />
+      <element id="file-copy" path="$USER_HOME$/Documents/JavaFX_LIB/lib/javafx.web.jar" />
     </root>
   </artifact>
 </component>
